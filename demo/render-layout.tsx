@@ -5,6 +5,7 @@ import { CgChevronDown } from "react-icons/cg";
 import {
   PiBellBold,
   PiCardsDuotone,
+  PiEmptyDuotone,
   PiEnvelopeBold,
   PiFireDuotone,
   PiGearBold,
@@ -47,8 +48,6 @@ const sidebars = [
               window.location.href = "/demo/alert.html";
             },
           },
-          { element: "Badge" },
-          { element: "Breadcrumb" },
           { element: "Button" },
           { element: "Card" },
           { element: "Carousel" },
@@ -100,6 +99,13 @@ const sidebars = [
   {
     groupName: "Pages",
     contents: [
+      {
+        icon: PiEmptyDuotone,
+        element: "Blank Page",
+        onClick: () => {
+          window.location.href = "/demo/pages/blank.html";
+        },
+      },
       {
         icon: PiUserSwitchDuotone,
         element: "Authentication",
