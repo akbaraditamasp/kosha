@@ -1,17 +1,10 @@
+import { Sidebar } from "#kosha";
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react";
-import { Fragment, ReactNode, useState } from "react";
+import { Fragment, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
-import { Sidebar, SidebarProps } from "./sidebar";
+import { LayoutProps } from "./types";
 
-export type LayoutProps = {
-  header?: ReactNode;
-  sidebars?: { groupName?: string; contents: SidebarProps[] }[];
-  title?: string;
-  accessories?: ReactNode;
-  children?: ReactNode;
-};
-
-export function Layout({
+export default function Layout({
   header,
   sidebars,
   title,

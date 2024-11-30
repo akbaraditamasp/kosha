@@ -1,35 +1,8 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, useState } from "react";
-import { IconType } from "react-icons";
+import { useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
+import { Sidebar as Interface, SidebarChildProps, SidebarProps } from "./types";
 
-export type SidebarProps = {
-  active?: boolean;
-  icon: IconType;
-  element: string;
-  children?: (SidebarChildProps &
-    Omit<
-      DetailedHTMLProps<
-        ButtonHTMLAttributes<HTMLButtonElement>,
-        HTMLButtonElement
-      >,
-      keyof SidebarChildProps
-    >)[];
-};
-
-export type SidebarChildProps = {
-  active?: boolean;
-  element: string;
-  children?: (SidebarChildProps &
-    Omit<
-      DetailedHTMLProps<
-        ButtonHTMLAttributes<HTMLButtonElement>,
-        HTMLButtonElement
-      >,
-      keyof SidebarChildProps
-    >)[];
-};
-
-export function Sidebar({
+const Sidebar = ({
   active,
   icon: Icon,
   className,
@@ -37,11 +10,7 @@ export function Sidebar({
   children,
   onClick,
   ...props
-}: Omit<
-  DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
-  keyof SidebarProps
-> &
-  SidebarProps) {
+}: SidebarProps) => {
   const [dropdownToggle, setDropdownToggle] = useState(Boolean(active));
 
   return (
@@ -91,26 +60,22 @@ export function Sidebar({
           }`}
         >
           {children?.map((item, index) => (
-            <SidebarChild key={`${index}`} {...item} />
+            <Child key={`${index}`} {...item} />
           ))}
         </div>
       )}
     </>
   );
-}
+};
 
-export function SidebarChild({
+const Child = ({
   active,
   className,
   element,
   children,
   onClick,
   ...props
-}: Omit<
-  DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
-  keyof SidebarChildProps
-> &
-  SidebarChildProps) {
+}: SidebarChildProps) => {
   const [dropdownToggle, setDropdownToggle] = useState(active);
 
   return (
@@ -145,10 +110,13 @@ export function SidebarChild({
           }`}
         >
           {children?.map((item, index) => (
-            <SidebarChild key={`${index}`} {...item} />
+            <Child key={`${index}`} {...item} />
           ))}
         </div>
       )}
     </>
   );
-}
+};
+
+(Sidebar as Interface).Child = Child;
+export default Sidebar as Interface;

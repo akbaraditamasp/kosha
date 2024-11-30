@@ -1,11 +1,12 @@
-import { HTMLProps, ReactNode, useState } from "react";
+import { HTMLProps, useState } from "react";
 import { CgChevronDown } from "react-icons/cg";
+import { Accordion, AccordionItemProps } from "./types";
 
-export function AccordionGroup({
+const Group = ({
   children,
   className,
   ...props
-}: HTMLProps<HTMLDivElement>) {
+}: HTMLProps<HTMLDivElement>) => {
   return (
     <div
       {...props}
@@ -14,9 +15,9 @@ export function AccordionGroup({
       {children}
     </div>
   );
-}
+};
 
-export function AccordionItem({ title, children }: AccordionItemProps) {
+const Item = ({ title, children }: AccordionItemProps) => {
   const [shown, setShown] = useState(false);
 
   return (
@@ -32,7 +33,7 @@ export function AccordionItem({ title, children }: AccordionItemProps) {
       >
         <span className="flex-1 px-5 py-4">{title}</span>
         <span
-          className={`px-5 text-xl transition transform ${
+          className={`px-5 text-xl transition transform text-neutral-600 ${
             shown ? "rotate-0" : "-rotate-90"
           }`}
         >
@@ -48,9 +49,8 @@ export function AccordionItem({ title, children }: AccordionItemProps) {
       </div>
     </div>
   );
-}
-
-export type AccordionItemProps = {
-  title: ReactNode;
-  children: ReactNode;
 };
+
+(Group as Accordion).Item = Item;
+
+export default Group as Accordion;

@@ -54,7 +54,12 @@ const sidebars = [
               window.location.href = "/demo/button.html";
             },
           },
-          { element: "Card" },
+          {
+            element: "Card",
+            onClick: () => {
+              window.location.href = "/demo/card.html";
+            },
+          },
           { element: "Carousel" },
           { element: "Collapse" },
           { element: "Dropdown" },
@@ -231,7 +236,7 @@ export default function render(title: string, active: string[], App: FC) {
                 <div className="flex flex-col mt-3">
                   <a
                     href="#"
-                    className="flex justify-start items-center outline-none px-3 py-2 hover:bg-neutral-100 rounded"
+                    className="text-neutral-800 flex justify-start items-center outline-none px-3 py-2 hover:bg-neutral-100 rounded"
                   >
                     <span className="mr-3 text-xl mb-0.5">
                       <PiUserCircleBold />
@@ -240,7 +245,7 @@ export default function render(title: string, active: string[], App: FC) {
                   </a>
                   <a
                     href="#"
-                    className="flex justify-start items-center outline-none px-3 py-2 hover:bg-neutral-100 rounded"
+                    className="text-neutral-800 flex justify-start items-center outline-none px-3 py-2 hover:bg-neutral-100 rounded"
                   >
                     <span className="mr-3 text-xl mb-0.5">
                       <PiLightningBold />
@@ -249,7 +254,7 @@ export default function render(title: string, active: string[], App: FC) {
                   </a>
                   <a
                     href="#"
-                    className="flex justify-start items-center outline-none px-3 py-2 hover:bg-neutral-100 rounded"
+                    className="text-neutral-800 flex justify-start items-center outline-none px-3 py-2 hover:bg-neutral-100 rounded"
                   >
                     <span className="mr-3 text-xl mb-0.5">
                       <PiGearBold />
