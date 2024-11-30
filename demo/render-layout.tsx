@@ -48,7 +48,12 @@ const sidebars = [
               window.location.href = "/demo/alert.html";
             },
           },
-          { element: "Button" },
+          {
+            element: "Button",
+            onClick: () => {
+              window.location.href = "/demo/button.html";
+            },
+          },
           { element: "Card" },
           { element: "Carousel" },
           { element: "Collapse" },
