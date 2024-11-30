@@ -147,7 +147,7 @@ render("Badge", ["Components", "Badge"], () => {
                   Notifications
                 </Button>
               </div>
-              <h3 className="text-primary-800 font-bold mb-3">Icon Only</h3>
+              <h3 className="text-primary-800 font-bold mb-3">Icons</h3>
               <div>
                 <Button
                   icon={PiBellBold}

@@ -55,6 +55,12 @@ const sidebars = [
             },
           },
           {
+            element: "Breadcrumb",
+            onClick: () => {
+              window.location.href = "/demo/breadcrumb.html";
+            },
+          },
+          {
             element: "Button",
             onClick: () => {
               window.location.href = "/demo/button.html";

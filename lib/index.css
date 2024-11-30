@@ -108,3 +108,8 @@ a {
 .accordion + .accordion {
   @apply border-t border-neutral-200;
 }
+
+.breadcrumb + .breadcrumb::before {
+  content: "/";
+  @apply mx-2 text-neutral-500;
+}

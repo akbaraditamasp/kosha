@@ -38,3 +38,8 @@ export type * from "./components/card/types";
 
 //Badge
 export { default as Badge } from "./components/badge";
+export type * from "./components/badge/types";
+
+//Breadcrumb
+export { default as Breadcrumb } from "./components/breadcrumb";
+export type * from "./components/breadcrumb/types";
