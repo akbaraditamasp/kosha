@@ -35,3 +35,6 @@ export type * from "./components/stats-card/types";
 //Card
 export { default as Card } from "./components/card";
 export type * from "./components/card/types";
+
+//Badge
+export { default as Badge } from "./components/badge";

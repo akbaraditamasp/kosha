@@ -49,6 +49,12 @@ const sidebars = [
             },
           },
           {
+            element: "Badge",
+            onClick: () => {
+              window.location.href = "/demo/badge.html";
+            },
+          },
+          {
             element: "Button",
             onClick: () => {
               window.location.href = "/demo/button.html";
